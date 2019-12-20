@@ -21,11 +21,18 @@ body > * {
   border: rgba(255,255,255,.15) solid 1px;
   border-radius: .5rem;
   display: grid;
-  grid-template-columns: 1fr auto;
   padding: 1rem;
   grid-gap: .5rem;
   box-sizing: border-box;
   box-shadow: .5rem .5rem 2rem rgba(0,0,0,.25);
+}
+
+.bottom-panel {
+  grid-template-columns: 1fr auto;
+}
+
+.sidepanels {
+  grid-template-columns: 1fr 1fr;
 }
 
 label {
@@ -35,7 +42,7 @@ label {
 }
 
 input {
-  padding: 0 .5rem;
+  padding: .5rem;
   border: rgba(255,255,255,.15) solid 1px;
 }
 
@@ -46,8 +53,17 @@ button {
   background: #04c2ff;
   font-weight: bold;
   color: #f2f2f2;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(.7);
+  }
 }
 
 button, input {
   border-radius: .5rem;
+}
+
+#submitButtonLR {
+  grid-column: 1/3;
 }

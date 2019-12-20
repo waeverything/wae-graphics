@@ -13,16 +13,16 @@
     "compatibleRange": ">=0.9",
 	"dashboardPanels": [
       {
-        "name": "text-widget",
-        "title": "PLACEHOLDER",
+        "name": "text-panels",
+        "title": "Text Panels",
         "width": 4,
-        "file": "text-widget.html",
+        "file": "text-panels.html",
         "headerColor": "#04c2ff"
       }
     ],
     "graphics": [
       {
-        "file": "text-widget.html",
+        "file": "text-panels.html",
         "width": 1920,
         "height": 1080
       }
