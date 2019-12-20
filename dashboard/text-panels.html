@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<div class="item bottom-panel">
 		<label>Bottom panel <span></span></label>
@@ -29,14 +31,37 @@
 	const leftInput = document.querySelector('#leftPanelText');
 	const rightInput = document.querySelector('#rightPanelText');
 	const showLeft = document.querySelector('#showLeft');
-	const showLeft = document.querySelector('#showRight');
-	const showLeft = document.querySelector('#showLR');
+	const showRight = document.querySelector('#showRight');
+	const showLR = document.querySelector('#showLR');
 
 	showBottom.onclick = () => {
-		nodecg.sendMessage('bottomPanel', bottomInput.value)
-	    .catch(error => {
-	        console.error(error);
-	    });
+		nodecg.sendMessage('bottomMessage', bottomInput.value)
+			.catch(error => {
+				console.error(error);
+			});
+	};
+	showLeft.onclick = () => {
+		nodecg.sendMessage('leftMessage', leftInput.value)
+			.catch(error => {
+				console.error(error);
+			});
+	};
+	showRight.onclick = () => {
+		nodecg.sendMessage('rightMessage', rightInput.value)
+			.catch(error => {
+				console.error(error);
+			});
+	};
+	showLR.onclick = () => {
+		nodecg.sendMessage('leftMessage', leftInput.value)
+			.catch(error => {
+				console.error(error);
+			});
+		nodecg.sendMessage('rightMessage', rightInput.value)
+			.catch(error => {
+				console.error(error);
+			});
 	};
 </script>
+
 </html>

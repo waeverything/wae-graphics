@@ -4,6 +4,7 @@ body {
   place-items: center;
   overflow: hidden;
   backface-visibility: hidden;
+  color: #f2f2f2;
 }
 
 h3 {
@@ -11,7 +12,7 @@ h3 {
   margin: 0;
 }
 
-#wrapper {
+#bottomPanel {
   position: absolute;
   width: 0vw;
   bottom: 5vh;
@@ -19,11 +20,11 @@ h3 {
   transition: width ease 1s;
   display: grid;
   place-items: center;
+  text-align: center;
 }
 
-#textGrid {
+#bottomPanel div {
   background: #222;
-  color: #fafafa;
   border-bottom: .5rem solid #04c2ff;
   width: 80vw;
   display: flex;
@@ -39,10 +40,61 @@ h3 {
   width: 80vw !important;
 }
 
-.show #textGrid {
+.show #bottomContent {
   margin-left: 0;
 }
 
-#textGrid h3 {
+#bottomContent h3 {
   padding: 1vw;
+}
+
+.sidepanel {
+  position: absolute;
+  background: #222;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  bottom: 20vh;
+  border-bottom: .5rem solid #04c2ff;
+  overflow: hidden;
+  transition: all ease 1s;
+  opacity: 0;
+}
+
+.sidepanel > div {
+  opacity: 0;
+  transition: all ease 2s;
+}
+
+.left-panel {
+  left: -5em;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.right-panel {
+  right: -5em;
+  text-align: right;
+  border-radius: 1rem 0 0 1rem;
+}
+
+#leftUpper, #rightUpper {
+  font-size: 2em;
+}
+
+#leftLower, #rightLower {
+  color: #aaa;
+}
+
+.showleft {
+  left: 0;
+  opacity: 1;
+}
+
+.showleft > div, .showright > div {
+  opacity: 1;
+}
+
+.showright {
+  right: 0;
+  opacity: 1;
 }

@@ -11,18 +11,39 @@
 </head>
 
 <body>
-	<div id="wrapper">
-		<div id="textGrid">
+	<div id="leftPanel" class="sidepanel left-panel">
+		<div id="leftUpper">
+
+		</div>
+		<div id="leftLower">
+
+		</div>
+	</div>
+	<div id="rightPanel" class="sidepanel right-panel">
+		<div id="rightUpper">
+
+		</div>
+		<div id="rightLower">
+
+		</div>
+	</div>
+
+
+	<div id="bottomPanel">
+		<div id="bottomContent">
 
 		</div>
 	</div>
 </body>
 
 <script>
-	let textElement = document.getElementById("textGrid");
-	let wrapperElement = document.getElementById("wrapper");
+	let textElement = document.getElementById("bottomContent");
+	let wrapperElement = document.getElementById("bottomPanel");
 
-	nodecg.listenFor('bottomPanel', (value, ack) => {
+	let leftPanel = document.getElementById("leftPanel");
+	let rightPanel = document.getElementById("rightPanel");
+
+	nodecg.listenFor('bottomMessage', (value, ack) => {
 
 		textElement.innerHTML = "";
 
@@ -37,6 +58,34 @@
 
 		setTimeout(function() {
 			wrapperElement.classList.remove("show");
+		}, 10000);
+	});
+
+
+
+	nodecg.listenFor('leftMessage', (value, ack) => {
+		let textfields = value.split(";");
+		document.getElementById("leftUpper").innerHTML = textfields[0];
+		document.getElementById("leftLower").innerHTML = textfields[1];
+
+		leftPanel.classList.add("showleft");
+
+		setTimeout(function() {
+			leftPanel.classList.remove("showleft");
+		}, 10000);
+	});
+
+
+
+	nodecg.listenFor('rightMessage', (value, ack) => {
+		let textfields = value.split(";");
+		document.getElementById("rightUpper").innerHTML = textfields[0];
+		document.getElementById("rightLower").innerHTML = textfields[1];
+
+		rightPanel.classList.add("showright");
+
+		setTimeout(function() {
+			rightPanel.classList.remove("showright");
 		}, 10000);
 	});
 </script>
