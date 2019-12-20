@@ -24,21 +24,21 @@
 
 	nodecg.listenFor('bottomPanel', (value, ack) => {
 
-				textElement.innerHTML = "";
+		textElement.innerHTML = "";
 
-				let names = value.split(";");
-				for (var i = 0; i < names.length; ++i) {
-					let nameBox = document.createElement("H3");
-					nameBox.innerHTML = names[i];
-					textElement.appendChild(nameBox);
-				}
+		let names = value.split(";");
+		for (var i = 0; i < names.length; ++i) {
+			let nameBox = document.createElement("H3");
+			nameBox.innerHTML = names[i];
+			textElement.appendChild(nameBox);
+		}
 
-				wrapperElement.classList.add("show");
+		wrapperElement.classList.add("show");
 
-				setTimeout(function() {
-					wrapperElement.classList.remove("show");
-				}, 10000);
-			});
+		setTimeout(function() {
+			wrapperElement.classList.remove("show");
+		}, 10000);
+	});
 </script>
 
 </html>

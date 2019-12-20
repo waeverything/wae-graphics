@@ -9,28 +9,31 @@
 <body>
 	<div class="item bottom-panel">
 		<label>Bottom panel <span></span></label>
-		<input id="bottomTextInput" type="text" placeholder="Seperate columns using semicolon."></input>
+		<input id="bottomPanelText" type="text" placeholder="Seperate columns using semicolon."></input>
 		<button id="showBottom">Show</button>
 	</div>
 	<div class="item sidepanels">
 		<label>Side panels</label>
-		<input id="textInputLeft" type="text" placeholder="Left side"></input>
-		<input id="textInputRight" type="text" placeholder="Right side"></input>
-		<button id="submitButtonLeft">Show left</button>
-		<button id="submitButtonRight">Show right</button>
-		<button id="submitButtonLR">Show both</button>
+		<input id="leftPanelText" type="text" placeholder="Left side"></input>
+		<input id="rightPanelText" type="text" placeholder="Right side"></input>
+		<button id="showLeft">Show left</button>
+		<button id="showRight">Show right</button>
+		<button id="showLR">Show both</button>
 	</div>
 </body>
 
 <script>
-	const textInput = document.querySelector('#bottomTextInput');
-	const submitButton = document.querySelector('#showBottom');
+	const bottomInput = document.querySelector('#bottomPanelText');
+	const showBottom = document.querySelector('#showBottom');
 
-	const textReplicant = nodecg.Replicant('text');
-	const updateReplicant = nodecg.Replicant('update');
+	const leftInput = document.querySelector('#leftPanelText');
+	const rightInput = document.querySelector('#rightPanelText');
+	const showLeft = document.querySelector('#showLeft');
+	const showLeft = document.querySelector('#showRight');
+	const showLeft = document.querySelector('#showLR');
 
-	submitButton.onclick = () => {
-		nodecg.sendMessage('bottomPanel', textInput.value)
+	showBottom.onclick = () => {
+		nodecg.sendMessage('bottomPanel', bottomInput.value)
 	    .catch(error => {
 	        console.error(error);
 	    });
