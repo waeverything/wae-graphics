@@ -1,0 +1,48 @@
+body {
+  font: 1vw 'Russo One', sans-serif;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+h3 {
+  font-size: 2em;
+  margin: 0;
+}
+
+#wrapper {
+  position: absolute;
+  width: 0vw;
+  bottom: 5vh;
+  overflow: hidden;
+  transition: width ease 1s;
+  display: grid;
+  place-items: center;
+}
+
+#textGrid {
+  background: #222;
+  color: #fafafa;
+  border-bottom: .5rem solid #04c2ff;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: .5vw;
+  z-index: -1;
+  margin-left: -40vw;
+  transition: margin-left ease 1s;
+}
+
+.show {
+  width: 80vw !important;
+}
+
+.show #textGrid {
+  margin-left: 0;
+}
+
+#textGrid h3 {
+  padding: 1vw;
+}

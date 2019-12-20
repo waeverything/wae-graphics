@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<label>Text:</label>
+	<input id="textInput" type="text"></input>
+	<button id="submitButton">Submit</button>
+</body>
+
+<script>
+	const textInput = document.querySelector('#textInput');
+	const submitButton = document.querySelector('#submitButton');
+
+	const textReplicant = nodecg.Replicant('text');
+	const updateReplicant = nodecg.Replicant('update');
+
+	textReplicant.on('change', (newValue, oldValue) => {
+		// The value of the Replicant has changed somewhere in NodeCG,
+		// this could be another dashboard panel, a server initiated change,
+		// or the doing of another user accessing your dashboard panel.
+		textInput.value = newValue;
+	});
+
+	submitButton.onclick = () => {
+		// A Replicant can be modified by modifying its `value`.
+		textReplicant.value = textInput.value;
+
+		if (updateReplicant.value == "1") {
+			updateReplicant.value = "0";
+		}
+		else {
+			updateReplicant.value = "1";
+		}
+	};
+</script>
+</html>
