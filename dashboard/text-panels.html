@@ -9,8 +9,8 @@
 <body>
 	<div class="item bottom-panel">
 		<label>Bottom panel <span></span></label>
-		<input id="textInputBottom" type="text" placeholder="Seperate columns using semicolon."></input>
-		<button id="submitButtonBottom">Show</button>
+		<input id="bottomTextInput" type="text" placeholder="Seperate columns using semicolon."></input>
+		<button id="showBottom">Show</button>
 	</div>
 	<div class="item sidepanels">
 		<label>Side panels</label>
@@ -23,29 +23,17 @@
 </body>
 
 <script>
-	const textInput = document.querySelector('#textInputBottom');
-	const submitButton = document.querySelector('#submitButtonBottom');
+	const textInput = document.querySelector('#bottomTextInput');
+	const submitButton = document.querySelector('#showBottom');
 
 	const textReplicant = nodecg.Replicant('text');
 	const updateReplicant = nodecg.Replicant('update');
 
-	textReplicant.on('change', (newValue, oldValue) => {
-		// The value of the Replicant has changed somewhere in NodeCG,
-		// this could be another dashboard panel, a server initiated change,
-		// or the doing of another user accessing your dashboard panel.
-		textInput.value = newValue;
-	});
-
 	submitButton.onclick = () => {
-		// A Replicant can be modified by modifying its `value`.
-		textReplicant.value = textInput.value;
-
-		if (updateReplicant.value == "1") {
-			updateReplicant.value = "0";
-		}
-		else {
-			updateReplicant.value = "1";
-		}
+		nodecg.sendMessage('bottomPanel', textInput.value)
+	    .catch(error => {
+	        console.error(error);
+	    });
 	};
 </script>
 </html>

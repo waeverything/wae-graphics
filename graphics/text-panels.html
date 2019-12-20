@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	 <link rel="stylesheet" href="css/normalize.css">
-	 <link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.min.css">
 
-	 <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<div id="wrapper">
 		<div id="textGrid">
@@ -17,31 +19,26 @@
 </body>
 
 <script>
-	// We can access Replicants from other bundles by specifying the bundle name as a second parameter.
-	// NodeCG requires that bundle names match their directory names, but you can always check the `package.json` to double check.
-	const textReplicant = nodecg.Replicant('text', 'wae_dashboard');
-	const updateReplicant = nodecg.Replicant('update', 'wae_dashboard');
-
 	let textElement = document.getElementById("textGrid");
 	let wrapperElement = document.getElementById("wrapper");
 
-	// Change will be called when the Replicant loads too, so we can use it to set the initial value.
-	updateReplicant.on('change', (newValue, oldValue) => {
-		textElement.innerHTML = "";
+	nodecg.listenFor('bottomPanel', (value, ack) => {
 
-		let names = textReplicant.value.split(";");
-		for (var i = 0; i < names.length; ++i) {
-			let nameBox = document.createElement("H3");
-  		nameBox.innerHTML = names[i];
-			textElement.appendChild(nameBox);
-		}
+				textElement.innerHTML = "";
 
-		wrapperElement.classList.add("show");
+				let names = value.split(";");
+				for (var i = 0; i < names.length; ++i) {
+					let nameBox = document.createElement("H3");
+					nameBox.innerHTML = names[i];
+					textElement.appendChild(nameBox);
+				}
 
-		setTimeout(function() {
-  		wrapperElement.classList.remove("show");
-		}, 10000);
+				wrapperElement.classList.add("show");
 
-	});
+				setTimeout(function() {
+					wrapperElement.classList.remove("show");
+				}, 10000);
+			});
 </script>
+
 </html>
