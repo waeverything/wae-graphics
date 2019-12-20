@@ -27,7 +27,9 @@ nodecg.listenFor('bottomMessage', (value, ack) => {
 nodecg.listenFor('leftMessage', (value, ack) => {
   let textfields = value.split(";");
   document.getElementById("leftUpper").innerHTML = textfields[0];
-  document.getElementById("leftLower").innerHTML = textfields[1];
+  if (textfields[1] != null) {
+    document.getElementById("leftLower").innerHTML = textfields[1];
+  }
 
   leftPanel.classList.add("showleft");
 
@@ -41,7 +43,9 @@ nodecg.listenFor('leftMessage', (value, ack) => {
 nodecg.listenFor('rightMessage', (value, ack) => {
   let textfields = value.split(";");
   document.getElementById("rightUpper").innerHTML = textfields[0];
-  document.getElementById("rightLower").innerHTML = textfields[1];
+  if (textfields[1] != null) {
+    document.getElementById("rightLower").innerHTML = textfields[1];
+  }
 
   rightPanel.classList.add("showright");
 
