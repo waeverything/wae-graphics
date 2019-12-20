@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+</head>
 <body>
-	<label>Text:</label>
-	<input id="textInput" type="text"></input>
-	<button id="submitButton">Submit</button>
+	<div class="item">
+		<label>Bottom</label>
+		<input id="textInputBottom" type="text" placeholder="Seperate columns using semicolon."></input>
+		<button id="submitButtonBottom">Show</button>
+	</div>
 </body>
 
 <script>
-	const textInput = document.querySelector('#textInput');
-	const submitButton = document.querySelector('#submitButton');
+	const textInput = document.querySelector('#textInputBottom');
+	const submitButton = document.querySelector('#submitButtonBottom');
 
 	const textReplicant = nodecg.Replicant('text');
 	const updateReplicant = nodecg.Replicant('update');

@@ -29,7 +29,7 @@
 	updateReplicant.on('change', (newValue, oldValue) => {
 		textElement.innerHTML = "";
 
-		let names = textReplicant.value.split(",");
+		let names = textReplicant.value.split(";");
 		for (var i = 0; i < names.length; ++i) {
 			let nameBox = document.createElement("H3");
   		nameBox.innerHTML = names[i];

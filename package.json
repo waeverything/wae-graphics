@@ -14,8 +14,8 @@
 	"dashboardPanels": [
       {
         "name": "text-widget",
-        "title": "Lower Thirds",
-        "width": 3,
+        "title": "PLACEHOLDER",
+        "width": 4,
         "file": "text-widget.html",
         "headerColor": "#04c2ff"
       }
