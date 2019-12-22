@@ -25,6 +25,13 @@
         "width": 3,
         "file": "intermission/index.html",
         "headerColor": "#8c66ff"
+      },
+      {
+        "name": "schedule",
+        "title": "Schedule Scene",
+        "width": 3,
+        "file": "schedule/index.html",
+        "headerColor": "#3ee888"
       }
     ],
     "graphics": [
