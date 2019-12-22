@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #222;
-  box-sizing: border-box;
   color: #f2f2f2;
   display: grid;
   font-size: 1rem;
@@ -21,7 +24,6 @@ body > * {
   border-radius: .5rem;
   border: rgba(255,255,255,.15) solid 1px;
   box-shadow: .5rem .5rem 2rem rgba(0,0,0,.25);
-  box-sizing: border-box;
   display: grid;
   grid-gap: .5rem;
   padding: 1rem;
@@ -35,6 +37,7 @@ label {
 input {
   border: rgba(255,255,255,.15) solid 1px;
   padding: .5rem;
+  width: 100%;
 }
 
 button {
