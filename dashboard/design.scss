@@ -1,15 +1,15 @@
 body {
-  text-align: center;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
   background: #222;
-  color: #f2f2f2;
-  padding: 1rem;
-  grid-gap: .5rem;
-  width: 100%;
-  overflow: hidden;
   box-sizing: border-box;
+  color: #f2f2f2;
+  display: grid;
+  font-size: 1rem;
+  grid-gap: .5rem;
+  overflow: hidden;
+  padding: 1rem;
+  place-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 body > * {
@@ -18,13 +18,13 @@ body > * {
 
 .item {
   background: #444;
-  border: rgba(255,255,255,.15) solid 1px;
   border-radius: .5rem;
-  display: grid;
-  padding: 1rem;
-  grid-gap: .5rem;
-  box-sizing: border-box;
+  border: rgba(255,255,255,.15) solid 1px;
   box-shadow: .5rem .5rem 2rem rgba(0,0,0,.25);
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: .5rem;
+  padding: 1rem;
 }
 
 label {
@@ -33,18 +33,18 @@ label {
 }
 
 input {
-  padding: .5rem;
   border: rgba(255,255,255,.15) solid 1px;
+  padding: .5rem;
 }
 
 button {
-  margin: 0;
+  background: #04c2ff;
   border: rgba(255,255,255,.15) solid 1px;
-  padding: .8rem 1.5rem;
-  background: #8c66ff;
-  font-weight: bold;
   color: #f2f2f2;
   cursor: pointer;
+  font-weight: bold;
+  margin: 0;
+  padding: .8rem 1.5rem;
 
   &:hover {
     filter: brightness(.7);

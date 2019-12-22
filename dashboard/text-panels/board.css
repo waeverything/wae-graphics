@@ -1,0 +1,15 @@
+label {
+  grid-column: 1 / 3;
+}
+
+.bottom-panel {
+  grid-template-columns: 1fr auto;
+}
+
+.sidepanels {
+  grid-template-columns: 1fr 1fr;
+}
+
+#showLR {
+  grid-column: 1/3;
+}
