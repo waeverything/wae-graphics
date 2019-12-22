@@ -55,6 +55,27 @@
         "width": 1920,
         "height": 1080
       }
+    ],
+    "assetCategories": [
+      {
+        "name": "videos",
+        "title": "Videos",
+        "allowedTypes": [
+          "mp4",
+          "webm",
+          "mkv"
+        ]
+      },
+      {
+        "name": "carousel",
+        "title": "Schedule Carousel",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      }
     ]
   }
 }
