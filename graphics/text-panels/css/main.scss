@@ -14,13 +14,12 @@ h3 {
 
 #bottomPanel {
 	position: absolute;
-	width: 0;
 	bottom: 5vh;
-	overflow: hidden;
-	transition: width ease 1s;
 	display: grid;
 	place-items: center;
 	text-align: center;
+	left: 0;
+	right: 0;
 
 	h3 {
 		padding: 1vw;
@@ -36,16 +35,13 @@ h3 {
 	justify-content: space-around;
 	border-radius: 0.5vw;
 	z-index: -1;
-	margin-left: -40vw;
-	transition: margin-left ease 1s;
-}
-
-#bottomPanel.show {
-	width: 80vw !important;
+	transition: width ease 1s;
+	width: 0;
+	overflow: hidden;
 }
 
 #bottomPanel.show div {
-	margin-left: 0;
+	width: 80vw !important;
 }
 
 .sidepanel {
