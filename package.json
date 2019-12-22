@@ -18,6 +18,13 @@
         "width": 4,
         "file": "text-panels/index.html",
         "headerColor": "#04c2ff"
+      },
+      {
+        "name": "intermission",
+        "title": "Intermission Scene",
+        "width": 3,
+        "file": "intermission/index.html",
+        "headerColor": "#8c66ff"
       }
     ],
     "graphics": [
