@@ -25,6 +25,11 @@
         "file": "text-panels.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "discord-widget/index.html",
+        "width": 1920,
+        "height": 1080
       }
     ]
   }
