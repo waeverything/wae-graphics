@@ -62,8 +62,8 @@ h6 {
   color: #aaa;
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: .5rem;
+  padding-top: 2em;
+  padding-bottom: .5em;
   position: absolute;
   transition: bottom ease 1s;
   z-index: -1;
@@ -76,7 +76,7 @@ h6 {
 }
 
 .show {
-  bottom: -2em;
+  bottom: -2.25em;
 }
 @keyframes float {
   0% {
