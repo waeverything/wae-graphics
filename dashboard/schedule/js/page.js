@@ -1,67 +1,26 @@
-//Input fields
-const bottomInput = document.querySelector('#bottomPanelText');
-const leftInput = document.querySelector('#leftPanelText');
-const rightInput = document.querySelector('#rightPanelText');
-
-//Buttons
-const showBottom = document.querySelector('#showBottom');
-const showLeft = document.querySelector('#showLeft');
-const showRight = document.querySelector('#showRight');
-const showLR = document.querySelector('#showLR');
+const submitButton = document.querySelector('#submit');
 
 //Replicants
-const bottomReplicant = nodecg.Replicant('bottomTextPanel');
-const leftReplicant = nodecg.Replicant('leftTextPanel');
-const rightReplicant = nodecg.Replicant('rightTextPanel');
+const textReplicant = nodecg.Replicant('schedule-content');
 
-//Check for changes in replicants
-bottomReplicant.on('change', (newValue, oldValue) => {
-  bottomInput.value = newValue;
-});
+textReplicant.on('change', (newValue, oldValue) => {
 
-leftReplicant.on('change', (newValue, oldValue) => {
-  leftInput.value = newValue;
-});
+  if (newValue != null) {
+    let array = newValue.split('§');
+    let inputs = document.getElementsByClassName( 'input' );
 
-rightReplicant.on('change', (newValue, oldValue) => {
-  rightInput.value = newValue;
+    for(let i in inputs ) {
+      inputs[i].value = array[i];
+    }
+  }
 });
 
 //Button clicks
-showBottom.onclick = () => {
-  bottomReplicant.value = bottomInput.value;
+submitButton.onclick = () => {
+  let inputs = document.getElementsByClassName( 'input' ),
+      text  = [].map.call(inputs, function( input ) {
+          return input.value;
+      }).join('§');
 
-  nodecg.sendMessage('bottomMessage', bottomInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-};
-showLeft.onclick = () => {
-  leftReplicant.value = leftInput.value;
-
-  nodecg.sendMessage('leftMessage', leftInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-};
-showRight.onclick = () => {
-  rightReplicant.value = rightInput.value;
-
-  nodecg.sendMessage('rightMessage', rightInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-};
-showLR.onclick = () => {
-  leftReplicant.value = leftInput.value;
-  rightReplicant.value = rightInput.value;
-
-  nodecg.sendMessage('leftMessage', leftInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-  nodecg.sendMessage('rightMessage', rightInput.value)
-    .catch(error => {
-      console.error(error);
-    });
+  textReplicant.value = text;
 };
