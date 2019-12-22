@@ -1,37 +1,15 @@
-const bottomInput = document.querySelector('#bottomPanelText');
-const showBottom = document.querySelector('#showBottom');
+const textInput = document.querySelector('#textInput');
+const submit = document.querySelector('#submit');
 
-const leftInput = document.querySelector('#leftPanelText');
-const rightInput = document.querySelector('#rightPanelText');
-const showLeft = document.querySelector('#showLeft');
-const showRight = document.querySelector('#showRight');
-const showLR = document.querySelector('#showLR');
+const textReplicant = nodecg.Replicant('intermission-text');
 
-showBottom.onclick = () => {
-  nodecg.sendMessage('bottomMessage', bottomInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-};
-showLeft.onclick = () => {
-  nodecg.sendMessage('leftMessage', leftInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-};
-showRight.onclick = () => {
-  nodecg.sendMessage('rightMessage', rightInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-};
-showLR.onclick = () => {
-  nodecg.sendMessage('leftMessage', leftInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-  nodecg.sendMessage('rightMessage', rightInput.value)
-    .catch(error => {
-      console.error(error);
-    });
+textReplicant.on('change', (newValue, oldValue) => {
+  // The value of the Replicant has changed somewhere in NodeCG,
+  // this could be another dashboard panel, a server initiated change,
+  // or the doing of another user accessing your dashboard panel.
+  nameInput.value = newValue;
+});
+
+submit.onclick = () => {
+  textReplicant.value = nameInput.value;
 };

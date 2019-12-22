@@ -14,9 +14,15 @@ let typingSpeed = 150;
 
 let url_string = window.location.href;
 let url = new URL(url_string);
-let txt = url.searchParams.get("s").replace(/_/g, " ");
+let txt;
 
 let i = 0;
+
+const textReplicant = nodecg.Replicant('intermission-text', 'wae-graphics');
+
+textReplicant.on('change', (newValue, oldValue) => {
+  txt = newValue;
+});
 
 window.setInterval(function(){
   i = 0;
