@@ -16,13 +16,13 @@
         "name": "text-panels",
         "title": "Text Panels",
         "width": 4,
-        "file": "text-panels.html",
+        "file": "text-panels/index.html",
         "headerColor": "#04c2ff"
       }
     ],
     "graphics": [
       {
-        "file": "text-panels.html",
+        "file": "text-panels/index.html",
         "width": 1920,
         "height": 1080
       },
