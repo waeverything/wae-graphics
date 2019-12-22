@@ -11,5 +11,5 @@ textReplicant.on('change', (newValue, oldValue) => {
 });
 
 submit.onclick = () => {
-  textReplicant.value = nameInput.value;
+  textReplicant.value = textInput.value;
 };
