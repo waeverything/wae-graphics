@@ -16,7 +16,7 @@ nodecg.listenFor('bottomMessage', (value, ack) => {
 
   bottomContent.innerHTML = "";
 
-  let names = value.split("§");
+  let names = value.split(";");
   for (var i = 0; i < names.length; ++i) {
     let nameBox = document.createElement("H3");
     nameBox.innerHTML = names[i];
