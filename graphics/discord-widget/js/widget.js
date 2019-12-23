@@ -18,21 +18,21 @@ setTimeout(update, delay);
 
 //Run script again every x seconds
 window.setInterval(function() {
-  update();
+	update();
 }, interval);
 
 //Update and show online members
 function update() {
-  fetch(url)
-    .then(res => res.json())
-    .then((out) => {
-      elem.innerHTML = out.members.length;
-      div.add("show");
-      setTimeout(function() {
-        div.remove("show");
-      }, time);
-    })
-    .catch(err => {
-      throw err
-    });
+	fetch(url)
+		.then(res => res.json())
+		.then((out) => {
+			elem.innerHTML = out.members.length;
+			div.add("show");
+			setTimeout(function() {
+				div.remove("show");
+			}, time);
+		})
+		.catch(err => {
+			throw err
+		});
 };

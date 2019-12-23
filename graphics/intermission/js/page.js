@@ -2,11 +2,11 @@
 let amount = 20;
 
 for (let i = 0; i < amount; i++) {
-  let elem = document.createElement("img");
-  elem.setAttribute("src", "svg/3dbar.svg");
-  elem.style.animationDelay = Math.floor(Math.random() * -60) + "s"
-  elem.style.opacity = Math.random() * 1
-  document.getElementById("objects").appendChild(elem);
+	let elem = document.createElement("img");
+	elem.setAttribute("src", "svg/3dbar.svg");
+	elem.style.animationDelay = Math.floor(Math.random() * -60) + "s"
+	elem.style.opacity = Math.random() * 1
+	document.getElementById("objects").appendChild(elem);
 }
 
 //Typewriter
@@ -21,25 +21,25 @@ let i = 0;
 const textReplicant = nodecg.Replicant('intermission-text', 'wae-graphics');
 
 textReplicant.on('change', (newValue, oldValue) => {
-  txt = newValue;
+	txt = newValue;
 });
 
-window.setInterval(function(){
-  i = 0;
-  typeWriter();
+window.setInterval(function() {
+	i = 0;
+	typeWriter();
 }, 20000);
 
 function typeWriter() {
-  if (txt != null) {
-    if(i < txt.length) {
-      document.getElementById("typewriter").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, typingSpeed);
-    }
-    setTimeout(function() {
-      document.getElementById("typewriter").innerHTML = "";
-    }, 15000);
-  }
+	if (txt != null) {
+		if (i < txt.length) {
+			document.getElementById("typewriter").innerHTML += txt.charAt(i);
+			i++;
+			setTimeout(typeWriter, typingSpeed);
+		}
+		setTimeout(function() {
+			document.getElementById("typewriter").innerHTML = "";
+		}, 15000);
+	}
 }
 
 window.onload = typeWriter();
