@@ -26,7 +26,7 @@ h3 {
 	}
 }
 
-#bottomPanel div {
+#bottomContent {
 	background: #222;
 	border-bottom: 0.5rem solid #04c2ff;
 	width: 80vw;
@@ -35,12 +35,16 @@ h3 {
 	justify-content: space-around;
 	border-radius: 0.5vw;
 	z-index: -1;
-	transition: width ease 1s;
-	width: 0;
 	overflow: hidden;
 }
 
-#bottomPanel.show div {
+#bottomPanel .hide {
+	width: 0;
+	overflow: hidden;
+	transition: width ease 1s;
+}
+
+#bottomPanel.show .hide {
 	width: 80vw !important;
 }
 
