@@ -16,7 +16,7 @@ nodecg.listenFor('bottomMessage', (value, ack) => {
 
   bottomContent.innerHTML = "";
 
-  let names = value.split(";");
+  let names = value.split("§");
   for (var i = 0; i < names.length; ++i) {
     let nameBox = document.createElement("H3");
     nameBox.innerHTML = names[i];
@@ -28,7 +28,7 @@ nodecg.listenFor('bottomMessage', (value, ack) => {
 
 //Left panel
 nodecg.listenFor('leftMessage', (value, ack) => {
-  let textfields = value.split(";");
+  let textfields = value.split("§");
   document.getElementById("leftUpper").innerHTML = textfields[0];
   if (textfields[1] != null) {
     document.getElementById("leftLower").innerHTML = textfields[1];
@@ -39,7 +39,7 @@ nodecg.listenFor('leftMessage', (value, ack) => {
 
 //Right panel
 nodecg.listenFor('rightMessage', (value, ack) => {
-  let textfields = value.split(";");
+  let textfields = value.split("§");
   document.getElementById("rightUpper").innerHTML = textfields[0];
   if (textfields[1] != null) {
     document.getElementById("rightLower").innerHTML = textfields[1];

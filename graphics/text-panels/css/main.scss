@@ -53,7 +53,7 @@ h3 {
 .sidepanel {
 	position: absolute;
 	background: #222;
-	padding: 1em;
+	padding: .5em 1em;
 	display: flex;
 	flex-direction: column;
 	bottom: 20vh;
@@ -99,4 +99,5 @@ h3 {
 
 .lower {
 	color: #aaa;
+	font-size: 1.2em;
 }

@@ -1,7 +1,5 @@
 //Input fields
 const bottomInput = document.querySelector('#bottomPanelText');
-const leftInput = document.querySelector('#leftPanelText');
-const rightInput = document.querySelector('#rightPanelText');
 
 //Buttons
 const showBottom = document.querySelector('#showBottom');
@@ -20,11 +18,26 @@ bottomReplicant.on('change', (newValue, oldValue) => {
 });
 
 leftReplicant.on('change', (newValue, oldValue) => {
-  leftInput.value = newValue;
+
+  if (newValue != null) {
+    let array = newValue.split('§');
+    let inputs = document.getElementsByClassName('input-left');
+
+    for (let i in inputs) {
+      inputs[i].value = array[i];
+    }
+  }
 });
 
 rightReplicant.on('change', (newValue, oldValue) => {
-  rightInput.value = newValue;
+  if (newValue != null) {
+    let array = newValue.split('§');
+    let inputs = document.getElementsByClassName('input-right');
+
+    for (let i in inputs) {
+      inputs[i].value = array[i];
+    }
+  }
 });
 
 //Button clicks
@@ -37,31 +50,41 @@ showBottom.onclick = () => {
     });
 };
 showLeft.onclick = () => {
-  leftReplicant.value = leftInput.value;
-
-  nodecg.sendMessage('leftMessage', leftInput.value)
-    .catch(error => {
-      console.error(error);
-    });
+  sendLeft();
 };
 showRight.onclick = () => {
-  rightReplicant.value = rightInput.value;
-
-  nodecg.sendMessage('rightMessage', rightInput.value)
-    .catch(error => {
-      console.error(error);
-    });
+  sendRight();
 };
 showLR.onclick = () => {
-  leftReplicant.value = leftInput.value;
-  rightReplicant.value = rightInput.value;
-
-  nodecg.sendMessage('leftMessage', leftInput.value)
-    .catch(error => {
-      console.error(error);
-    });
-  nodecg.sendMessage('rightMessage', rightInput.value)
-    .catch(error => {
-      console.error(error);
-    });
+  sendLeft();
+  sendRight();
 };
+
+function sendLeft() {
+  let inputs = document.getElementsByClassName('input-left'),
+    leftInputText = [].map.call(inputs, function(input) {
+      return input.value;
+    }).join('§');
+
+  leftReplicant.value = leftInputText;
+  console.log(leftReplicant.value);
+
+  nodecg.sendMessage('leftMessage', leftInputText)
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+function sendRight() {
+  let inputs = document.getElementsByClassName('input-right'),
+    rightInputText = [].map.call(inputs, function(input) {
+      return input.value;
+    }).join('§');
+
+  rightReplicant.value = rightInputText;
+
+  nodecg.sendMessage('rightMessage', rightInputText)
+    .catch(error => {
+      console.error(error);
+    });
+}
