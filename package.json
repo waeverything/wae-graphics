@@ -32,6 +32,13 @@
         "width": 3,
         "file": "schedule/index.html",
         "headerColor": "#3ee888"
+      },
+      {
+        "name": "utility",
+        "title": "Utility",
+        "width": 2,
+        "file": "utility/index.html",
+        "headerColor": "#eddb74"
       }
     ],
     "graphics": [
@@ -54,6 +61,11 @@
         "file": "schedule/index.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "audio-locator/index.html",
+        "width": 1,
+        "height": 1
       }
     ],
     "assetCategories": [
@@ -75,6 +87,12 @@
           "gif",
           "png"
         ]
+      }
+    ],
+    "soundCues": [
+      {
+        "name": "sinewave",
+        "defaultFile": "sound/sinewave.mp3"
       }
     ]
   }
