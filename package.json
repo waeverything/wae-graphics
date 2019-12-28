@@ -39,7 +39,6 @@
         "width": 2,
         "file": "utility/index.html",
         "headerColor": "#eddb74"
-<<<<<<< HEAD
       },
       {
         "name": "twitch-chat",
@@ -47,8 +46,6 @@
         "width": 3,
         "file": "twitch-chat/index.html",
         "headerColor": "#9147ff"
-=======
->>>>>>> fb7b027fa6c0c442fc7a2ce03fdf7039ffceb2ca
       }
     ],
     "graphics": [
@@ -76,13 +73,6 @@
         "file": "audio-locator/index.html",
         "width": 1,
         "height": 1
-      },
-      {
-        "name": "twitch-chat",
-        "title": "Twitch Chat",
-        "width": 3,
-        "file": "twitch-chat/index.html",
-        "headerColor": "#9147ff"
       }
     ],
     "assetCategories": [
