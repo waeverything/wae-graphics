@@ -11,8 +11,7 @@
 
   "nodecg": {
     "compatibleRange": ">=0.9",
-	"dashboardPanels": [
-      {
+    "dashboardPanels": [{
         "name": "text-panels",
         "title": "Text Panels",
         "width": 4,
@@ -48,8 +47,7 @@
         "headerColor": "#9147ff"
       }
     ],
-    "graphics": [
-      {
+    "graphics": [{
         "file": "text-panels/index.html",
         "width": 1920,
         "height": 1080
@@ -75,8 +73,7 @@
         "height": 1
       }
     ],
-    "assetCategories": [
-      {
+    "assetCategories": [{
         "name": "videos",
         "title": "Videos",
         "allowedTypes": [
@@ -96,11 +93,9 @@
         ]
       }
     ],
-    "soundCues": [
-      {
-        "name": "sinewave",
-        "defaultFile": "sound/sinewave.mp3"
-      }
-    ]
+    "soundCues": [{
+      "name": "sinewave",
+      "defaultFile": "sound/sinewave.mp3"
+    }]
   }
 }
