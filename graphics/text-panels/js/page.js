@@ -1,49 +1,65 @@
-//Show panel for 10 seconds
-function showPanel(ID) {
-	let element = document.getElementById(ID);
-
-	element.classList.add("show");
-
-	setTimeout(function() {
-		element.classList.remove("show");
-	}, 10000);
-}
-
-let bottomContent = document.getElementById("bottomContent");
+let bottomTimeout;
+let leftTimeout;
+let rightTimeout;
 
 //Bottom panel
+let bottomPanelTime = 10;
+nodecg.listenFor('bottomPanelTime', (value, ack) => {
+	bottomPanelTime = value;
+});
 nodecg.listenFor('bottomMessage', (value, ack) => {
+	clearTimeout(bottomTimeout);
 
-	bottomContent.innerHTML = "";
+	let content = document.getElementById("bottomContent");
+	content.innerHTML = "";
 
 	let names = value.split(";");
 	for (var i = 0; i < names.length; ++i) {
 		let nameBox = document.createElement("H3");
 		nameBox.innerHTML = names[i];
-		bottomContent.appendChild(nameBox);
+		content.appendChild(nameBox);
 	}
 
-	showPanel("bottomPanel");
+	let panel = document.getElementById("bottomPanel")
+	panel.classList.add("show");
+
+	bottomTimeout = setTimeout(function() {
+		panel.classList.remove("show");
+	}, bottomPanelTime * 1000);
 });
 
 //Left panel
 nodecg.listenFor('leftMessage', (value, ack) => {
-	let textfields = value.split("§");
-	document.getElementById("leftUpper").innerHTML = textfields[0];
-	if (textfields[1] != null) {
-		document.getElementById("leftLower").innerHTML = textfields[1];
+	clearTimeout(leftTimeout);
+
+	let text = value.split("§");
+	document.getElementById("leftUpper").innerHTML = text[0];
+	if (text[1] != null) {
+		document.getElementById("leftLower").innerHTML = text[1];
 	}
 
-	showPanel("leftPanel");
+	let panel = document.getElementById("leftPanel")
+	panel.classList.add("show");
+
+	leftTimeout = setTimeout(function() {
+		panel.classList.remove("show");
+	}, 10000);
 });
 
 //Right panel
 nodecg.listenFor('rightMessage', (value, ack) => {
-	let textfields = value.split("§");
-	document.getElementById("rightUpper").innerHTML = textfields[0];
-	if (textfields[1] != null) {
-		document.getElementById("rightLower").innerHTML = textfields[1];
+	clearTimeout(rightTimeout);
+
+	let text = value.split("§");
+	document.getElementById("rightUpper").innerHTML = text[0];
+	if (text[1] != null) {
+		document.getElementById("rightLower").innerHTML = text[1];
 	}
 
-	showPanel("rightPanel");
+	let panel = document.getElementById("rightPanel")
+	panel.classList.add("show");
+
+	rightTimeout = setTimeout(function() {
+		panel.classList.remove("show");
+	}, 10000);
 });

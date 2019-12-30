@@ -1,3 +1,8 @@
 button {
   background: #eddb74;
 }
+
+#clock {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
