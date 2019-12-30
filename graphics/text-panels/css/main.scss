@@ -1,3 +1,5 @@
+$border-blue: 0.5rem solid #04c2ff;
+
 body {
 	font: 1vw 'Russo One', sans-serif;
 	display: grid;
@@ -28,7 +30,7 @@ h3 {
 
 #bottomContent {
 	background: #222;
-	border-bottom: 0.5rem solid #04c2ff;
+	border-bottom: $border-blue;
 	width: 80vw;
 	display: flex;
 	align-items: center;
@@ -36,6 +38,7 @@ h3 {
 	border-radius: 0.5vw;
 	z-index: -1;
 	overflow: hidden;
+	box-shadow: .5em .5em 2em rgba(0,0,0,.5);
 }
 
 #bottomPanel .hide {
@@ -57,7 +60,7 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	bottom: 20vh;
-	border-bottom: 0.5rem solid #04c2ff;
+	border-bottom: $border-blue;
 	overflow: hidden;
 	transition: all ease 1s;
 	opacity: 0;
