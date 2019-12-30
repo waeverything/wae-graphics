@@ -31,23 +31,14 @@ h3 {
 #bottomContent {
 	align-items: center;
 	background: #222;
-<<<<<<< HEAD
 	background: radial-gradient(circle, #222 0%, #111 100%);
 	border-bottom: 0.5em solid #04c2ff;
 	border-radius: 0.5vw;
-=======
-	border-bottom: $border-blue;
-	width: 80vw;
->>>>>>> cb939546a8f968895305ff9130af30fc37951341
 	display: flex;
 	justify-content: space-around;
 	overflow: hidden;
-<<<<<<< HEAD
 	width: 80vw;
 	z-index: -1;
-=======
-	box-shadow: .5em .5em 2em rgba(0,0,0,.5);
->>>>>>> cb939546a8f968895305ff9130af30fc37951341
 }
 
 #bottomPanel .hide {
@@ -69,12 +60,7 @@ h3 {
 	bottom: 20vh;
 	display: flex;
 	flex-direction: column;
-<<<<<<< HEAD
 	opacity: 0;
-=======
-	bottom: 20vh;
-	border-bottom: $border-blue;
->>>>>>> cb939546a8f968895305ff9130af30fc37951341
 	overflow: hidden;
 	padding: .5em 1em;
 	position: absolute;
