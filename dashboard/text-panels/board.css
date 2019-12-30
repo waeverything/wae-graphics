@@ -2,12 +2,12 @@ label {
   grid-column: 1 / 3;
 }
 
-.bottom-panel {
-  grid-template-columns: 1fr auto;
+.bottom-panel, .sidepanels {
+  grid-template-columns: 1fr 1fr;
 }
 
-.sidepanels {
-  grid-template-columns: 1fr 1fr;
+.bottom-panel input {
+  grid-column: 1 / 3;
 }
 
 #showLR {
