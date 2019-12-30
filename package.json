@@ -23,21 +23,21 @@
         "title": "Intermission Scene",
         "width": 3,
         "file": "intermission/index.html",
-        "headerColor": "#8c66ff"
+        "headerColor": "#8d1f7e"
       },
       {
         "name": "schedule",
         "title": "Schedule Scene",
         "width": 3,
         "file": "schedule/index.html",
-        "headerColor": "#3ee888"
+        "headerColor": "#139f50"
       },
       {
         "name": "utility",
         "title": "Utility",
         "width": 2,
         "file": "utility/index.html",
-        "headerColor": "#eddb74"
+        "headerColor": "#6f4a15"
       },
       {
         "name": "twitch-chat",
