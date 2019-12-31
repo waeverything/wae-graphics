@@ -45,6 +45,13 @@
         "width": 3,
         "file": "twitch-chat/index.html",
         "headerColor": "#9147ff"
+      },
+      {
+        "name": "video",
+        "title": "Video player",
+        "width": 4,
+        "file": "video-player/index.html",
+        "headerColor": "#3ee888"
       }
     ],
     "graphics": [{
@@ -71,6 +78,11 @@
         "file": "audio-locator/index.html",
         "width": 1,
         "height": 1
+      },
+      {
+        "file": "video-player/index.html",
+        "width": 1920,
+        "height": 1080
       }
     ],
     "assetCategories": [{

@@ -1,0 +1,19 @@
+.videoListItem {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-column-gap: 0.5em;
+}
+
+.playListItem {
+    margin: 0.5em 0px;
+}
+.playListItem>div {
+    display:grid;
+    grid-template-columns: 4fr 1fr;
+}
+.videoTitle {
+    text-align: left;
+    padding-left: 30px;
+    margin: auto 0px;
+    font-weight: bold;
+}
