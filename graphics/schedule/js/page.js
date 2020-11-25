@@ -1,42 +1,26 @@
 const textReplicant = nodecg.Replicant('schedule-content', 'wae-graphics');
-const content = document.getElementById('schedule');
+const schedule = document.getElementById('schedule');
 
 textReplicant.on('change', (newValue, oldValue) => {
-  content.innerHTML = "";
+	schedule.innerHTML = "";
 
-  if (newValue != null) {
-    let array = newValue.split('§');
+	if (newValue == null) return;
 
-    for(let i in array) {
-      let element = document.createElement("H2");
-      element.innerHTML = array[i];
-      content.appendChild(element);
-    }
-  }
+	const array = newValue.split('§');
+
+	for (let i in array) {
+		const element = document.createElement("H2");
+		element.innerHTML = array[i];
+		schedule.appendChild(element);
+	}
 });
 
 
 //Clock
 function currentTime() {
-	var date = new Date(); /* creating object of Date class */
-	var hour = date.getHours();
-	var min = date.getMinutes();
-	var sec = date.getSeconds();
-	hour = updateTime(hour);
-	min = updateTime(min);
-	sec = updateTime(sec);
-	document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
-	var t = setTimeout(function() {
-		currentTime()
-	}, 1000); /* setting timer */
-}
-
-function updateTime(k) {
-	if (k < 10) {
-		return "0" + k;
-	} else {
-		return k;
-	}
+	const date = new Date(); /* creating object of Date class */
+	document.getElementById("clock").innerText = date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds(); /* adding time to the div */
+	setTimeout(currentTime, 1000); /* setting timer */
 }
 
 currentTime(); /* calling currentTime() function to initiate the process */

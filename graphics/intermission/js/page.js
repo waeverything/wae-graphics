@@ -4,8 +4,8 @@ const barCount = 20;
 for (let i = 0; i < barCount; i++) {
 	const elem = document.createElement("img");
 	elem.setAttribute("src", "svg/3dbar.svg");
-	elem.style.animationDelay = Math.floor(Math.random() * -60) + "s"
-	elem.style.opacity = Math.random() * 1
+	elem.style.animationDelay = Math.floor(Math.random() * -60) + "s";
+	elem.style.opacity = Math.random() * 1;
 	document.getElementById("objects").appendChild(elem);
 }
 
@@ -25,7 +25,7 @@ function typeWriter() {
 	if (displayText == null) return;
 
 	if (i < displayText.length) {
-		document.getElementById("typewriter").innerHTML += txt.charAt(i);
+		document.getElementById("typewriter").innerHTML += displayText.charAt(i);
 		i++;
 		setTimeout(typeWriter, typingSpeed);
 	}
