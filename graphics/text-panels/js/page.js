@@ -10,17 +10,17 @@ nodecg.listenFor('bottomPanelTime', (value, ack) => {
 nodecg.listenFor('bottomMessage', (value, ack) => {
 	clearTimeout(bottomTimeout);
 
-	let content = document.getElementById("bottomContent");
+	const content = document.getElementById("bottomContent");
 	content.innerHTML = "";
 
-	let names = value.split(";");
-	for (var i = 0; i < names.length; ++i) {
-		let nameBox = document.createElement("H3");
-		nameBox.innerHTML = names[i];
-		content.appendChild(nameBox);
+	const names = value.split(";");
+	for (let name in names) {
+		const nameItem = document.createElement("h3");
+		nameItem.innerHTML = name;
+		content.appendChild(nameItem);
 	}
 
-	let panel = document.getElementById("bottomPanel")
+	const panel = document.getElementById("bottomPanel");
 	panel.classList.add("show");
 
 	bottomTimeout = setTimeout(function() {
@@ -32,13 +32,13 @@ nodecg.listenFor('bottomMessage', (value, ack) => {
 nodecg.listenFor('leftMessage', (value, ack) => {
 	clearTimeout(leftTimeout);
 
-	let text = value.split("§");
+	const text = value.split("§");
 	document.getElementById("leftUpper").innerHTML = text[0];
 	if (text[1] != null) {
 		document.getElementById("leftLower").innerHTML = text[1];
 	}
 
-	let panel = document.getElementById("leftPanel")
+	const panel = document.getElementById("leftPanel");
 	panel.classList.add("show");
 
 	leftTimeout = setTimeout(function() {
@@ -50,13 +50,13 @@ nodecg.listenFor('leftMessage', (value, ack) => {
 nodecg.listenFor('rightMessage', (value, ack) => {
 	clearTimeout(rightTimeout);
 
-	let text = value.split("§");
+	const text = value.split("§");
 	document.getElementById("rightUpper").innerHTML = text[0];
 	if (text[1] != null) {
 		document.getElementById("rightLower").innerHTML = text[1];
 	}
 
-	let panel = document.getElementById("rightPanel")
+	const panel = document.getElementById("rightPanel");
 	panel.classList.add("show");
 
 	rightTimeout = setTimeout(function() {
