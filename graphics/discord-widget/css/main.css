@@ -1,6 +1,6 @@
 body {
   color: #fafafa;
-  font: .9vw 'Russo One', sans-serif;
+  font: 5vw 'Russo One', sans-serif;
   user-select: none;
 }
 
@@ -17,17 +17,15 @@ img {
 }
 
 .wrapper {
-  border-radius: .5em;
   background: #23272A;
+  border-radius: 2vw;
   display: grid;
-  grid-gap: .5em;
-  grid-template-columns: 4em 1fr 3em;
-  padding: .5em;
+  grid-gap: 2vw;
+  grid-template-columns: 18vw 1fr 14vw;
+  height: 22vw;
   place-items: center;
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  box-shadow: .2em .2em 1em rgba(0,0,0,.5);
+  position: relative;
+  padding: 0 2vw;
 }
 
 .server-icon {
@@ -37,7 +35,6 @@ img {
 .center-text {
   text-align: left;
   width: 100%;
-  padding-right: .25em;
 }
 
 h5 {
@@ -46,7 +43,7 @@ h5 {
 
 h6 {
   color: #aaa;
-  font-size: 1em;
+  font-size: .9em;
 }
 
 .discord-icon {
@@ -54,37 +51,37 @@ h6 {
 }
 
 
-//Online member counter
 .online {
-  border-radius: 0 0 .5em .5em;
   background: #161616;
+  border-radius: 2vw;
   bottom: 0;
   color: #aaa;
   display: flex;
   justify-content: center;
-  padding-top: 2em;
-  padding-bottom: .5em;
+  padding-bottom: 0.5vw;
+  padding-top: 10vw;
   position: absolute;
   transition: bottom ease 1s;
+  width: 100vw;
   z-index: -1;
-  width: 100%;
 }
 
 .count {
   color: #fafafa;
-  padding-left: .35em;
+  padding-left: 1vw;
 }
 
 .show {
-  bottom: -2.25em;
+  bottom: -7.5vw;
 }
+
 @keyframes float {
   0% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-.5em);
+    transform: translateY(-2.5vw);
   }
 
   100% {
